@@ -1,0 +1,2623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushil Consulting | Data Solutions for Startups</title>
+    <meta name="description" content="Helping startups harness the power of data with analytics, AI, and business intelligence solutions">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===== Modern Color Theme ===== */
+        :root {
+            /* Professional startup-friendly palette */
+            --primary: #4361ee;  /* Vibrant blue */
+            --primary-dark: #3a56d4;
+            --primary-light: #5f75f1;
+            --accent: #4cc9f0;   /* Light blue */
+            --accent-dark: #38b6db;
+            --light: #ffffff;
+            --light-gray: #f8f9ff; 
+            --dark: #2b2d42;
+            --dark-gray: #4a5568;
+            
+            /* Extended palette */
+            --lilac: #b8d0eb;
+            --mist: #e0f2fe;
+            --lavender: #caf0f8;
+            
+            /* Success/Error Colors */
+            --success: #38a169;
+            --error: #e53e3e;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
+            --glass-shadow: 0 8px 32px rgba(67, 97, 238, 0.15);
+            
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+            
+            /* Transitions */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--dark);
+            background-color: var(--light-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: var(--radius-full);
+        }
+
+        .section-title p {
+            font-size: 1.125rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 0.875rem;
+            transition: var(--transition);
+            cursor: pointer;
+            gap: 0.5rem;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--light);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--dark);
+            border-color: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-dark);
+            border-color: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--light);
+            border-color: #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            border-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            padding: 0.75rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo i {
+            color: var(--accent);
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            position: relative;
+            font-weight: 500;
+            color: var(--dark);
+            padding: 0.5rem 0;
+            font-size: 1.05rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+            margin-left: 2rem;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(255, 255, 255, 1));
+            color: var(--dark);
+            text-align: center;
+            position: relative;
+            padding: 7rem 0 5rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, var(--lilac) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .typing-text {
+            font-size: 1.5rem;
+            height: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Data Visualization Graphic */
+        .data-graphic {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .graphic-1 {
+            top: 20%;
+            left: 5%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .graphic-2 {
+            bottom: 15%;
+            right: 8%;
+            animation: float 5s ease-in-out infinite 1s;
+        }
+
+        /* ===== WHY CHOOSE US SECTION ===== */
+        .value-props {
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-props::before {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, var(--mist) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .prop-card {
+            background: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .prop-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.03) 0%, rgba(255,255,255,0) 100%);
+            z-index: -1;
+        }
+
+        .prop-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .prop-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .prop-card p {
+            margin-bottom: 1.5rem;
+        }
+
+        .prop-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            font-weight: 500;
+            gap: 0.5rem;
+        }
+
+        .prop-link i {
+            transition: var(--transition);
+        }
+
+        .prop-link:hover i {
+            transform: translateX(3px);
+        }
+
+        /* ===== DATA PASSION SECTION ===== */
+        .data-passion {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .data-passion::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, var(--lavender) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .passion-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .passion-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+
+        .passion-content p {
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .passion-features {
+            margin-top: 2rem;
+        }
+
+        .passion-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .passion-feature i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 0.25rem;
+        }
+
+        .passion-feature h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+
+        .passion-feature p {
+            margin-bottom: 0;
+        }
+
+        .passion-graphics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .passion-graphic {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .passion-graphic:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .passion-graphic i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .passion-graphic h4 {
+            font-size: 1.125rem;
+            color: var(--light);
+        }
+
+        /* ===== DATA IMPORTANCE SECTION ===== */
+        .data-importance {
+            background: var(--light-gray);
+            position: relative;
+        }
+
+        .data-importance::before {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, var(--mist) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .importance-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .importance-item {
+            background: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+
+        .importance-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .importance-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .importance-item h3 i {
+            color: var(--accent);
+            font-size: 1.75rem;
+        }
+
+        .importance-item p {
+            margin-bottom: 1.5rem;
+        }
+
+        .importance-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .importance-feature {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .importance-feature i {
+            color: var(--primary);
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            background: var(--light);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, var(--mist) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .services-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--dark-gray);
+            border: 1px solid var(--light-gray);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: var(--light);
+            border-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(76, 201, 240, 0.03) 0%, rgba(255,255,255,0) 100%);
+            z-index: -1;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .service-features {
+            margin: 1.5rem 0;
+        }
+
+        .service-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-feature i {
+            color: var(--accent);
+            margin-top: 0.25rem;
+        }
+
+        .service-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .service-cta i {
+            transition: var(--transition);
+        }
+
+        .service-cta:hover i {
+            transform: translateX(3px);
+        }
+
+        /* ===== PROCESS SECTION ===== */
+        .process {
+            background: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, var(--lilac) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .process-steps {
+            display: grid;
+            gap: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 5rem;
+        }
+
+        .process-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4rem;
+            height: 4rem;
+            background: var(--accent);
+            color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: var(--shadow-md);
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .process-step p {
+            margin-bottom: 1.5rem;
+        }
+
+        .process-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .process-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: var(--light);
+            padding: 0.75rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .process-feature i {
+            color: var(--accent);
+            margin-top: 0.25rem;
+        }
+
+        /* ===== DATA SOURCES SECTION ===== */
+        .data-sources {
+            background: var(--light);
+            position: relative;
+        }
+
+        .data-sources::before {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, var(--lavender) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .sources-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .source-card {
+            background: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+            text-align: center;
+        }
+
+        .source-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .source-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .source-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .source-card p {
+            font-size: 0.9375rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            background: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, var(--lavender) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-skills {
+            margin-top: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: var(--light);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--primary);
+            border-radius: var(--radius-full);
+            width: 0;
+            transition: width 1s ease;
+        }
+
+        .founder-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .founder-detail-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .founder-detail-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .founder-detail-card h4 i {
+            color: var(--accent);
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            background: var(--light);
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, var(--mist) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .contact-container.single-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+        .contact-info {
+            background: var(--primary);
+            color: var(--light);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+
+        .contact-info p {
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+
+        .contact-item p {
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .direct-contact-btns {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-form {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--radius-md);
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            background: var(--light);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #1a1a2e;
+            color: var(--light);
+            padding: 4rem 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.03)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-col h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+            color: var(--light);
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-col p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+            padding-left: 0.5rem;
+        }
+
+        .footer-newsletter {
+            margin-top: 1.5rem;
+        }
+
+        .newsletter-input {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-input input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: 'Inter', sans-serif;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+        }
+
+        .newsletter-input input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-input button {
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            border-radius: var(--radius-md);
+            padding: 0 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-input button:hover {
+            background: var(--accent-dark);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.875rem;
+            opacity: 0.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background: var(--primary);
+            color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Data Visualization Icons */
+        .data-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-container,
+            .contact-container,
+            .passion-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .passion-graphics {
+                grid-template-columns: repeat(4, 1fr);
+                margin-top: 2rem;
+            }
+            
+            .process-step {
+                padding-left: 4.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.125rem;
+            }
+            
+            .typing-text {
+                font-size: 1.25rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--light);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: var(--transition);
+                box-shadow: var(--shadow-md);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 1.5rem;
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .passion-graphics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .direct-contact-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.75rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .process-step {
+                padding-left: 0;
+                padding-top: 4.5rem;
+            }
+            
+            .process-number {
+                left: 0;
+                top: 0;
+            }
+            
+            .passion-graphics {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-col h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .importance-item {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Sushil Consulting</span>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#importance">Why Data?</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Get Started
+                    </a>
+                </div>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Data Solutions for Startup Growth</h1>
+                <div class="typing-text" id="typing-text"></div>
+                <p>We help startups transform raw data into strategic assets with analytics, AI, and business intelligence solutions tailored to your growth stage.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-primary">
+                        <i class="fas fa-chart-bar"></i> Our Services
+                    </a>
+                    <a href="#contact" class="btn btn-accent">
+                        <i class="fas fa-calendar-alt"></i> Free Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Data Visualization Graphics -->
+        <div class="data-graphic graphic-1">
+            <i class="fas fa-chart-pie data-icon"></i>
+        </div>
+        <div class="data-graphic graphic-2">
+            <i class="fas fa-chart-line data-icon"></i>
+        </div>
+    </section>
+
+    <!-- ===== WHY CHOOSE US SECTION ===== -->
+    <section class="value-props">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Startups Choose Us</h2>
+                <p>We specialize in helping early-stage companies build data capabilities that scale with their growth</p>
+            </div>
+            
+            <div class="props-grid">
+                <div class="prop-card fade-in">
+                    <div class="prop-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Startup-Focused</h3>
+                    <p>We understand the unique challenges startups face and design solutions that grow with your business, from MVP to scale.</p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Scalable architecture</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Cost-effective solutions</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Fast implementation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="prop-card fade-in" style="animation-delay: 0.1s;">
+                    <div class="prop-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Actionable Insights</h3>
+                    <p>We go beyond dashboards to deliver clear, actionable recommendations that drive real business impact.</p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Executive-level reporting</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>KPI identification</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Growth recommendations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="prop-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="prop-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Full-Stack Expertise</h3>
+                    <p>From data pipelines to predictive models, we handle your entire data stack with end-to-end solutions.</p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Data engineering</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Analytics & BI</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Machine learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DATA PASSION SECTION ===== -->
+    <section class="data-passion">
+        <div class="container">
+            <div class="passion-container">
+                <div class="passion-content">
+                    <h2>We Live and Breathe Data</h2>
+                    <p>Data isn't just our business—it's our passion. We love uncovering the stories hidden in numbers and transforming them into actionable strategies for your startup.</p>
+                    
+                    <div class="passion-features">
+                        <div class="passion-feature">
+                            <i class="fas fa-magic"></i>
+                            <div>
+                                <h4>Data Storytelling</h4>
+                                <p>We don't just analyze data—we bring it to life with compelling narratives that drive decisions.</p>
+                            </div>
+                        </div>
+                        <div class="passion-feature">
+                            <i class="fas fa-brain"></i>
+                            <div>
+                                <h4>Pattern Recognition</h4>
+                                <p>Our expertise helps identify trends and opportunities that others might miss in your data.</p>
+                            </div>
+                        </div>
+                        <div class="passion-feature">
+                            <i class="fas fa-chess"></i>
+                            <div>
+                                <h4>Strategic Thinking</h4>
+                                <p>We align data insights with your business goals to create a competitive advantage.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="passion-graphics">
+                    <div class="passion-graphic">
+                        <i class="fas fa-database"></i>
+                        <h4>Data Engineering</h4>
+                    </div>
+                    <div class="passion-graphic">
+                        <i class="fas fa-chart-bar"></i>
+                        <h4>Analytics</h4>
+                    </div>
+                    <div class="passion-graphic">
+                        <i class="fas fa-robot"></i>
+                        <h4>AI/ML</h4>
+                    </div>
+                    <div class="passion-graphic">
+                        <i class="fas fa-project-diagram"></i>
+                        <h4>Visualization</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DATA IMPORTANCE SECTION ===== -->
+    <section class="data-importance" id="importance">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Data Matters for Your Startup</h2>
+                <p>Understanding the strategic value of data in today's competitive landscape</p>
+            </div>
+            
+            <div class="importance-container">
+                <div class="importance-item fade-in">
+                    <h3><i class="fas fa-bullseye"></i> Data-Driven Decision Making</h3>
+                    <p>In today's fast-paced business environment, intuition alone isn't enough. Data provides the objective foundation needed to make informed decisions about product development, marketing strategies, and resource allocation.</p>
+                    <p>Startups that leverage data effectively can identify the most promising opportunities and avoid costly mistakes, accelerating their path to product-market fit.</p>
+                    
+                    <div class="importance-features">
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Reduce guesswork in strategic decisions</span>
+                        </div>
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Validate assumptions with real evidence</span>
+                        </div>
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Measure impact of changes accurately</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="importance-item fade-in" style="animation-delay: 0.1s;">
+                    <h3><i class="fas fa-chart-line"></i> Competitive Advantage</h3>
+                    <p>Data is the new competitive battlefield. Startups that harness their data effectively can outmaneuver competitors by identifying market trends early, optimizing operations, and personalizing customer experiences.</p>
+                    <p>The right data strategy can help you spot opportunities before others do and respond to market changes with agility.</p>
+                    
+                    <div class="importance-features">
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Identify emerging market trends</span>
+                        </div>
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Benchmark against industry standards</span>
+                        </div>
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Develop data-driven differentiators</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="importance-item fade-in" style="animation-delay: 0.2s;">
+                    <h3><i class="fas fa-user-friends"></i> Customer Understanding</h3>
+                    <p>Your data contains invaluable insights about your customers' behaviors, preferences, and pain points. Analyzing this data helps you create more targeted products and marketing campaigns.</p>
+                    <p>By understanding customer journeys and segmentation, you can increase retention, improve conversion rates, and build products people truly love.</p>
+                    
+                    <div class="importance-features">
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Segment customers for targeted outreach</span>
+                        </div>
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Predict churn before it happens</span>
+                        </div>
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Optimize user onboarding flows</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="importance-item fade-in" style="animation-delay: 0.3s;">
+                    <h3><i class="fas fa-search-dollar"></i> Operational Efficiency</h3>
+                    <p>Data analytics can uncover inefficiencies in your operations, from supply chain management to customer support. By measuring and optimizing these processes, you can reduce costs and improve quality.</p>
+                    <p>Startups often waste resources on ineffective processes - data helps you focus on what truly moves the needle.</p>
+                    
+                    <div class="importance-features">
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Identify process bottlenecks</span>
+                        </div>
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Optimize resource allocation</span>
+                        </div>
+                        <div class="importance-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Automate repetitive tasks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DATA SOURCES SECTION ===== -->
+    <section class="data-sources">
+        <div class="container">
+            <div class="section-title">
+                <h2>Beyond Your Internal Data</h2>
+                <p>Valuable data sources you might not be utilizing yet</p>
+            </div>
+            
+            <div class="sources-container">
+                <div class="sources-grid">
+                    <div class="source-card fade-in">
+                        <div class="source-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Public Data Sets</h3>
+                        <p>Government statistics, economic indicators, and industry reports that can provide context for your business metrics.</p>
+                    </div>
+                    
+                    <div class="source-card fade-in" style="animation-delay: 0.1s;">
+                        <div class="source-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Social Media Signals</h3>
+                        <p>Sentiment analysis, engagement patterns, and demographic data from social platforms about your brand and competitors.</p>
+                    </div>
+                    
+                    <div class="source-card fade-in" style="animation-delay: 0.2s;">
+                        <div class="source-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Search Trends</h3>
+                        <p>Google Trends and keyword data revealing what your potential customers are actively searching for.</p>
+                    </div>
+                    
+                    <div class="source-card fade-in" style="animation-delay: 0.3s;">
+                        <div class="source-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Competitor Benchmarks</h3>
+                        <p>Publicly available data about competitors' pricing, features, and customer reviews for comparative analysis.</p>
+                    </div>
+                    
+                    <div class="source-card fade-in" style="animation-delay: 0.4s;">
+                        <div class="source-icon">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <h3>IoT & Sensor Data</h3>
+                        <p>For hardware startups, sensor data can provide insights into product usage and performance.</p>
+                    </div>
+                    
+                    <div class="source-card fade-in" style="animation-delay: 0.5s;">
+                        <div class="source-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Customer Feedback</h3>
+                        <p>Unstructured data from support tickets, reviews, and surveys that reveal pain points and opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Startup Services</h2>
+                <p>Comprehensive data solutions designed for early-stage companies</p>
+            </div>
+            
+            <div class="services-tabs">
+                <button class="tab-btn active" data-tab="foundational">Foundational</button>
+                <button class="tab-btn" data-tab="growth">Growth</button>
+                <button class="tab-btn" data-tab="advanced">Advanced</button>
+            </div>
+            
+            <div class="tab-content active" id="foundational-tab">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Data Infrastructure Setup</h3>
+                        <p>Build the right data foundation with cloud-based storage, pipelines, and integration tailored to your startup's needs.</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Cloud data warehouse setup</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>ETL pipeline development</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>API integration services</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Data governance framework</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="service-cta">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Essential Dashboards</h3>
+                        <p>Get the key metrics you need to monitor your business with clean, actionable dashboards.</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Core KPI dashboards</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Financial performance</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Customer acquisition</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Product usage metrics</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="service-cta">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-chart"></i>
+                        </div>
+                        <h3>Customer Analytics</h3>
+                        <p>Understand your users with segmentation, behavior analysis, and retention tracking.</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>User segmentation</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Behavioral analysis</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Retention modeling</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Cohort analysis</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="service-cta">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="growth-tab">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-network"></i>
+                        </div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Move beyond basic reporting with predictive models and sophisticated analysis.</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Predictive modeling</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Customer lifetime value</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Churn prediction</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Scenario analysis</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="service-cta">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search-dollar"></i>
+                        </div>
+                        <h3>Growth Analytics</h3>
+                        <p>Optimize your marketing spend and growth strategies with data-driven insights.</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Marketing attribution</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Channel performance</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>ROI analysis</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Experimentation framework</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="service-cta">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Data Integration</h3>
+                        <p>Connect all your tools and platforms for a unified view of your business.</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>CRM integration</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Marketing automation</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Product analytics</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Financial systems</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="service-cta">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="advanced-tab">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI & Machine Learning</h3>
+                        <p>Leverage cutting-edge AI to automate processes and uncover hidden opportunities.</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Predictive analytics</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Recommendation engines</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Anomaly detection</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Natural language processing</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="service-cta">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Operational Analytics</h3>
+                        <p>Optimize your internal operations with data-driven process improvements.</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Process mining</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Resource optimization</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Supply chain analytics</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Workflow automation</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="service-cta">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Executive Analytics</h3>
+                        <p>Board-ready analytics and insights to support fundraising and strategic decisions.</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Investor dashboards</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Market analysis</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Competitive benchmarking</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Scenario modeling</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="service-cta">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS SECTION ===== -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Startup Process</h2>
+                <p>A flexible approach designed for fast-moving early-stage companies</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Discovery Sprint</h3>
+                    <p>We start with an intensive 1-week discovery to understand your business, data landscape, and key challenges.</p>
+                    
+                    <div class="process-features">
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Business goals alignment</span>
+                        </div>
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Data maturity assessment</span>
+                        </div>
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Quick wins identification</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>MVP Implementation</h3>
+                    <p>We deliver a minimum viable product in 2-4 weeks to start generating value quickly.</p>
+                    
+                    <div class="process-features">
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Core metrics implementation</span>
+                        </div>
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Essential dashboards</span>
+                        </div>
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Data pipeline setup</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Iterative Improvement</h3>
+                    <p>We continuously enhance your data capabilities through agile sprints and regular feedback.</p>
+                    
+                    <div class="process-features">
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Bi-weekly iterations</span>
+                        </div>
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Stakeholder reviews</span>
+                        </div>
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Priority-driven roadmap</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Scale & Optimize</h3>
+                    <p>We help you scale your data infrastructure and processes as your startup grows.</p>
+                    
+                    <div class="process-features">
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Architecture scaling</span>
+                        </div>
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced analytics</span>
+                        </div>
+                        <div class="process-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Team training</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our Founder</h2>
+                <p>Meet the expert behind Sushil Consulting</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-content">
+                    <h2>Tarun Tiwari</h2>
+                    <p>Data Analyst | Business Analyst | Junior Data Scientist</p>
+                    <p>With nearly 2 years of experience delivering actionable insights through data science, analytics, and business intelligence, I founded Sushil Consulting to help startups harness their data potential.</p>
+                    <p>My expertise spans building scalable data pipelines, predictive models, and executive dashboards using SQL, Python, and Power BI across HR, pharma, and healthcare domains.</p>
+                    
+                    <div class="founder-details">
+                        <div class="founder-detail-card">
+                            <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+                            <p>Master's in Data Science from Delhi University with specialization in Business Analytics and Machine Learning.</p>
+                        </div>
+                        
+                        <div class="founder-detail-card">
+                            <h4><i class="fas fa-briefcase"></i> Experience</h4>
+                            <p>Worked with 15+ startups across various industries, helping them implement data-driven decision making frameworks.</p>
+                        </div>
+                        
+                        <div class="founder-detail-card">
+                            <h4><i class="fas fa-cogs"></i> Technical Skills</h4>
+                            <p>Python, SQL, Power BI, Tableau, Machine Learning, Data Warehousing, and Cloud Data Platforms.</p>
+                        </div>
+                        
+                        <div class="founder-detail-card">
+                            <h4><i class="fas fa-lightbulb"></i> Philosophy</h4>
+                            <p>Believes in making data accessible and actionable for non-technical founders to drive real business impact.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-skills">
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Data Analytics</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Business Intelligence</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Data Engineering</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-btns" style="justify-content: center; margin-top: 2rem;">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Work With Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Ready to transform your startup's data capabilities? Let's talk</p>
+        </div>
+
+        <div class="contact-container single-column">
+            <div class="contact-info">
+                <h2>Start Your Data Journey</h2>
+                <p>Whether you're pre-launch or scaling up, we can help you build the right data foundation for your startup's success.</p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>Delhi, India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>contact@sushilconsulting.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+91-9876543210</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="direct-contact-btns">
+                    <a href="mailto:contact@sushilconsulting.com" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Email Now
+                    </a>
+                    <a href="https://wa.me/919876543210" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Sushil Consulting</h3>
+                    <p>Helping startups transform data into strategic assets for growth and innovation.</p>
+                    <div class="footer-links">
+                        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Foundational Services</a></li>
+                        <li><a href="#services">Growth Services</a></li>
+                        <li><a href="#services">Advanced Services</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Delhi, India</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 98189 20352</p>
+                    <p><i class="fas fa-envelope"></i> taruntiwari1009@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sushil Consulting. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-links a').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+        
+        // Set home link as active by default
+        document.querySelector('.nav-links a[href="#home"]').classList.add('active');
+        
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+            
+            // Update active nav link based on scroll position
+            const sections = document.querySelectorAll('section');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Typing Animation
+        const typingText = document.getElementById('typing-text');
+        const words = ['Data Analytics', 'AI Solutions', 'Business Intelligence', 'Predictive Modeling', 'Data Strategy'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        
+        function type() {
+            const currentWord = words[wordIndex];
+            const currentChar = currentWord.substring(0, charIndex);
+            typingText.textContent = currentChar;
+            
+            if (!isDeleting && charIndex < currentWord.length) {
+                charIndex++;
+                typingSpeed = 100;
+            } else if (isDeleting && charIndex > 0) {
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                isDeleting = !isDeleting;
+                wordIndex = (!isDeleting && wordIndex === words.length - 1) ? 0 : (!isDeleting ? wordIndex + 1 : wordIndex);
+                typingSpeed = isDeleting ? 1500 : 500;
+            }
+            
+            setTimeout(type, typingSpeed);
+        }
+        
+        // Start typing animation
+        setTimeout(type, 1000);
+        
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    
+                    // Animate skill bars when about section is visible
+                    if (entry.target.id === 'about') {
+                        document.querySelectorAll('.skill-progress').forEach(bar => {
+                            const width = bar.parentElement.previousElementSibling.lastElementChild.textContent;
+                            bar.style.width = width;
+                        });
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('section, .importance-item, .source-card').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            backToTopBtn.classList.toggle('active', window.scrollY > 300);
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth Scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Service Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.dataset.tab;
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        
+// Simple Form Submission
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const messageEl = document.getElementById('formMessage');
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    messageEl.textContent = 'Sending...';
+    messageEl.style.color = 'var(--primary)';
+    
+    // Get form data
+    const formData = new FormData(form);
+    const url = 'https://script.google.com/macros/s/AKfycbx_HDSto2eIETqvewOtgvNxS87GcIhBTA3xpSsjI9VMCTZaf-bt1Hpt0MLyTp-fwap7/exec';
+    
+    // Simple fetch request
+    fetch(url, {
+        method: 'POST',
+        body: formData  // Let the browser handle the Content-Type
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Network error');
+        return response.text();
+    })
+    .then(text => {
+        messageEl.textContent = 'Thank you! Message sent.';
+        messageEl.style.color = 'var(--success)';
+        form.reset();
+    })
+    .catch(error => {
+        messageEl.textContent = 'Failed to send. Please email us directly.';
+        messageEl.style.color = 'var(--error)';
+        console.error('Error:', error);
+    })
+    .finally(() => {
+        submitBtn.disabled = false;
+    });
+});
+    </script>
+</body>
+</html>

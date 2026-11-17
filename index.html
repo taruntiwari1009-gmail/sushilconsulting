@@ -1807,10 +1807,10 @@
           <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
           <span>Sushil Consulting</span>
         </a>
-        <button class="mobile-menu-btn">
-          <i class="fas fa-bars"></i>
+        <button class="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+          <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
           <li><a href="#services">Services</a></li>
           <li><a href="#solutions">Solutions</a></li>
           <li><a href="#transformation-impact">Impact</a></li>
@@ -2296,7 +2296,7 @@
     <div class="data-viz-content">
       <h2>Interactive Data Exploration</h2>
       <p>Our advanced visualization tools help uncover hidden patterns and relationships in your data that traditional charts can't reveal.</p>
-      <button class="btn" id="viz-explore">Explore Visualization</button>
+      <p class="section-subtitle">Illustrative network graphic with generated points; it does not represent live client data.</p>
     </div>
   </section>
 
@@ -2742,7 +2742,7 @@
           <h3>Company</h3>
           <ul class="footer-links">
             <li><a href="#about">Our Approach</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#cta">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -2754,29 +2754,43 @@
   </footer>
 
   <!-- WhatsApp Button -->
-  <a href="https://wa.me/918076750789" class="whatsapp-btn" target="_blank">
+  <a href="https://wa.me/918076750789" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contact Sushil Consulting on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <!-- JavaScript -->
   <script>
     // Mobile Menu Toggle
-    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-      document.querySelector('.nav-links').classList.toggle('active');
-      this.querySelector('i').classList.toggle('fa-times');
-      this.querySelector('i').classList.toggle('fa-bars');
+    const mobileMenuButton = document.querySelector('.mobile-menu-btn');
+    const navigationLinks = document.querySelector('.nav-links');
+
+    mobileMenuButton.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      navigationLinks.classList.toggle('active', !isExpanded);
+      this.setAttribute('aria-expanded', String(!isExpanded));
+      this.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
+      this.querySelector('i').classList.toggle('fa-times', !isExpanded);
+      this.querySelector('i').classList.toggle('fa-bars', isExpanded);
     });
     
     // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        const target = href === '#'
+          ? document.getElementById('hero')
+          : document.querySelector(href);
+
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-        document.querySelector('.nav-links').classList.remove('active');
-        document.querySelector('.mobile-menu-btn i').classList.remove('fa-times');
-        document.querySelector('.mobile-menu-btn i').classList.add('fa-bars');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        navigationLinks.classList.remove('active');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        mobileMenuButton.setAttribute('aria-label', 'Open navigation menu');
+        mobileMenuButton.querySelector('i').classList.remove('fa-times');
+        mobileMenuButton.querySelector('i').classList.add('fa-bars');
       });
     });
     
@@ -3636,8 +3650,12 @@
     // 3D Data Visualization
     function initDataGlobe() {
       const container = document.getElementById('data-globe');
-      const width = container.clientWidth;
-      const height = container.clientHeight;
+      if (!container || !window.THREE || !THREE.WebGLRenderer || !THREE.OrbitControls) {
+        return;
+      }
+
+      const width = container.clientWidth || window.innerWidth;
+      const height = container.clientHeight || 300;
 
       // Scene
       const scene = new THREE.Scene();
@@ -3755,11 +3773,8 @@
         renderer.setSize(container.clientWidth, container.clientHeight);
       });
 
-      // Explore button
-      document.getElementById('viz-explore').addEventListener('click', () => {
-        // Show a simple alert since the 3D visualization is not fully functional
-        alert('Interactive data visualization would be implemented here with a fully functional 3D data exploration tool.');
-      });
+      // The globe is an illustrative, automatically generated network graphic.
+      // It does not display live client or business data.
     }
 
     // Initialize 3D globe when the section is in view

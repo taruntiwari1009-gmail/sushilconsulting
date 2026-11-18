@@ -186,6 +186,46 @@ body{background:var(--paper);color:var(--ink)}
 .dashboard-value{display:flex;align-items:center;justify-content:center;gap:22px;margin:30px 0 20px}.dashboard-value>div{display:grid;grid-template-columns:28px auto;column-gap:9px;align-items:center}.value-step{grid-row:span 2;display:grid;place-items:center;width:27px;height:27px;border-radius:9px;background:#e8e4fa;color:#7968c5;font-size:9px}.dashboard-value b{font:600 11px var(--display);color:#303957}.dashboard-value small{font-size:9px;color:#7e859a}.value-arrow{color:#aaa2d0}.dashboard-cta{text-align:center;color:#707891;font-size:12px}.dashboard-cta a{color:#7662bd;font-weight:700;border-bottom:1px solid #cfc6f1;padding-bottom:2px}
 @media(max-width:760px){.dashboard-intro{grid-template-columns:1fr;gap:12px}.dashboard-note{justify-self:start}.dash-topbar{align-items:flex-start;flex-direction:column}.dash-controls{flex-wrap:wrap}.dash-powered{display:none}.dash-kpis{grid-template-columns:repeat(2,1fr)}.dash-main-grid,.dash-bottom-grid{grid-template-columns:1fr}.dashboard-shell{padding:13px;border-radius:17px}.dash-panel{padding:14px}.revenue-chart{height:150px}.dashboard-value{align-items:flex-start;gap:9px;flex-wrap:wrap}.dashboard-value>div{min-width:28%;flex:1}.value-arrow{display:none}.dash-foot{flex-direction:column}}
 
+
+/* Data literacy lesson */
+.data-decoded{background:#fbfbff}
+.learn-heading{max-width:720px;margin-bottom:40px}
+.learn-heading h2{font:500 clamp(39px,4.4vw,59px)/1.08 var(--display);letter-spacing:-.075em;margin:15px 0}
+.learn-heading h2 em{font-style:normal;color:#8873d0}
+.learn-heading p{max-width:650px;color:#697087;font-size:14px;line-height:1.9}
+.lesson-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:28px;align-items:stretch}
+.lesson-copy{padding:30px;border:1px solid rgba(160,165,205,.34);border-radius:20px;background:linear-gradient(145deg,#f5f4fc,#fff);box-shadow:inset 0 1px 0 #fff}
+.lesson-label{font-size:8px;letter-spacing:.16em;font-weight:700;color:#8370cb}
+.lesson-copy h3{font:600 25px/1.2 var(--display);letter-spacing:-.055em;color:#202943;margin:20px 0 12px}
+.lesson-copy>p{font-size:12px;line-height:1.85;color:#747c94}
+.lesson-definitions{display:grid;gap:0;margin-top:26px;border-top:1px solid #e5e5f0}
+.lesson-definitions div{padding:13px 0;border-bottom:1px solid #e5e5f0}
+.lesson-definitions b,.lesson-definitions span{display:block}.lesson-definitions b{font:600 11px var(--display);color:#313b5a}.lesson-definitions span{font-size:10px;color:#858ba0;margin-top:3px}
+.lesson-interactive{display:flex;flex-direction:column;gap:13px}
+.lesson-table{padding:19px;border:1px solid #e5e7f1;border-radius:18px;background:#fff;box-shadow:0 15px 40px rgba(40,48,87,.055)}
+.lesson-table-head{display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid #eceef4;color:#999fb1;font-size:8px;letter-spacing:.12em}
+.company-row{display:grid;grid-template-columns:1.05fr 1fr .9fr .9fr;gap:8px;align-items:center;padding:17px 0;border-bottom:1px solid #eff0f5}
+.company-row:last-child{border-bottom:0;padding-bottom:4px}
+.company-name{display:flex;align-items:center;gap:7px;font-size:10px;color:#343d5a}.company-dot{width:8px;height:8px;border-radius:50%}.company-dot.a{background:#8d9acb}.company-dot.b{background:#8a76d4}
+.company-metric small,.company-metric strong{display:block}.company-metric small{font-size:8px;color:#9298aa}.company-metric strong{font:600 14px var(--display);color:#303957;margin-top:4px}.company-metric.profit strong{color:#27866e}
+.question-box{padding:20px 21px;border:1px solid rgba(137,119,214,.24);border-radius:17px;background:linear-gradient(135deg,#f1effb,#fff)}
+.question-kicker{font-size:8px;letter-spacing:.16em;font-weight:700;color:#8873d0}
+.question-box h4{font:600 16px var(--display);letter-spacing:-.03em;color:#27304b;margin:9px 0 13px}
+.answer-options{display:flex;gap:9px}
+.answer-choice{padding:9px 15px;border:1px solid #dcdced;border-radius:9px;background:#fff;color:#525d7b;font:600 10px var(--sans);cursor:pointer;transition:.2s}
+.answer-choice:hover,.answer-choice[aria-pressed="true"]{border-color:#8b78d2;background:#ebe7fb;color:#6654b4}
+.answer-feedback{min-height:35px;margin-top:12px;color:#747c94;font-size:10px;line-height:1.65}
+.answer-feedback.correct{color:#267a63}.answer-feedback.incorrect{color:#a36b43}
+.lesson-takeaway{display:flex;gap:17px;align-items:flex-start;margin-top:18px;padding:23px 25px;border:1px solid rgba(137,119,214,.2);border-radius:16px;background:linear-gradient(120deg,rgba(234,230,251,.75),rgba(255,255,255,.88))}
+.takeaway-icon{display:grid;place-items:center;flex:0 0 35px;height:35px;border-radius:11px;background:#e5e0f9;color:#7765c4;font-size:18px}
+.lesson-takeaway b{display:block;margin:6px 0 4px;color:#2d3653;font:600 14px var(--display)}.lesson-takeaway p{margin:0;color:#727b94;font-size:11px;line-height:1.8}
+.data-literacy-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.data-literacy-strip>div{padding:17px 16px;border-top:1px solid #dcd9ef}
+.data-literacy-strip span,.data-literacy-strip b,.data-literacy-strip small{display:block}
+.data-literacy-strip span{font-size:8px;letter-spacing:.13em;color:#8b78d2}.data-literacy-strip b{margin:7px 0 4px;color:#303957;font:600 11px var(--display)}.data-literacy-strip small{color:#82899e;font-size:9px;line-height:1.6}
+@media(max-width:760px){.lesson-layout{grid-template-columns:1fr}.lesson-copy{padding:23px}.company-row{grid-template-columns:1fr 1fr;gap:12px}.company-name{grid-column:1/-1}.data-literacy-strip{grid-template-columns:1fr 1fr}.lesson-takeaway{padding:18px}}
+@media(max-width:420px){.company-metric strong{font-size:12px}.lesson-table{padding:14px}.data-literacy-strip{gap:8px}.answer-options{flex-wrap:wrap}}
+
 </style>
 </head>
 <body>
@@ -250,6 +290,42 @@ body{background:var(--paper);color:var(--ink)}
       </div>
       <div class="dashboard-value"><div><span class="value-step">01</span><b>Connect</b><small>Bring data together from the systems you already use.</small></div><span class="value-arrow">→</span><div><span class="value-step">02</span><b>Understand</b><small>Turn raw information into clear metrics and patterns.</small></div><span class="value-arrow">→</span><div><span class="value-step">03</span><b>Act</b><small>Give decision-makers a clearer next step.</small></div></div>
       <p class="dashboard-cta">Need a dashboard for your business? <a href="#contact">Let's discuss what you need to see and decide. ↗</a></p>
+    </div>
+  </section>
+  <section class="section data-decoded" id="data-decoded">
+    <div class="wrap">
+      <div class="learn-heading reveal">
+        <div class="eyebrow">Data, decoded · A practical mini lesson</div>
+        <h2>One number rarely tells<br><em>the whole story.</em></h2>
+        <p>Data becomes useful when you connect the numbers, ask the right question and understand what they mean for a decision. Let's look at a simple business example.</p>
+      </div>
+      <div class="lesson-layout reveal">
+        <div class="lesson-copy">
+          <span class="lesson-label">LESSON 01 / REVENUE VS PROFIT</span>
+          <h3>Which business is actually doing better?</h3>
+          <p>Both businesses sell similar products. Business A generates more revenue. Business B keeps a larger share of every rupee it earns.</p>
+          <div class="lesson-definitions">
+            <div><b>Revenue</b><span>The money earned from sales before expenses.</span></div>
+            <div><b>Profit</b><span>What remains after costs and expenses are paid.</span></div>
+            <div><b>Profit margin</b><span>The percentage of revenue that becomes profit.</span></div>
+          </div>
+        </div>
+        <div class="lesson-interactive">
+          <div class="lesson-table">
+            <div class="lesson-table-head"><span>ILLUSTRATIVE FIGURES</span><span>ANNUAL VIEW</span></div>
+            <div class="company-row"><div class="company-name"><span class="company-dot a"></span><b>Business A</b></div><div class="company-metric"><small>Revenue</small><strong>₹1 crore</strong></div><div class="company-metric"><small>Profit margin</small><strong>8%</strong></div><div class="company-metric profit"><small>Profit</small><strong>₹8 lakh</strong></div></div>
+            <div class="company-row"><div class="company-name"><span class="company-dot b"></span><b>Business B</b></div><div class="company-metric"><small>Revenue</small><strong>₹80 lakh</strong></div><div class="company-metric"><small>Profit margin</small><strong>18%</strong></div><div class="company-metric profit"><small>Profit</small><strong>₹14.4 lakh</strong></div></div>
+          </div>
+          <div class="question-box">
+            <span class="question-kicker">YOUR TURN</span>
+            <h4>Which business generated more profit?</h4>
+            <div class="answer-options"><button type="button" class="answer-choice" data-answer="a" aria-pressed="false">Business A</button><button type="button" class="answer-choice" data-answer="b" aria-pressed="false">Business B</button></div>
+            <div class="answer-feedback" id="lesson-feedback" aria-live="polite">Choose an answer to reveal the insight.</div>
+          </div>
+        </div>
+      </div>
+      <div class="lesson-takeaway reveal"><span class="takeaway-icon">↗</span><div><span class="lesson-label">THE BUSINESS INSIGHT</span><b>Growth and profitability are not the same thing.</b><p>If you only track revenue, you might celebrate the wrong result. Looking at revenue alongside costs and margins gives leaders a more complete picture before they decide where to invest, increase prices or reduce waste.</p></div></div>
+      <div class="data-literacy-strip reveal"><div><span>01</span><b>Ask a better question</b><small>What are we really trying to understand?</small></div><div><span>02</span><b>Choose the right measure</b><small>Which metric actually answers it?</small></div><div><span>03</span><b>Interpret in context</b><small>What else could explain the number?</small></div><div><span>04</span><b>Decide and measure again</b><small>Did the action improve the outcome?</small></div></div>
     </div>
   </section>
   <section class="section" id="expertise">
@@ -321,6 +397,19 @@ body{background:var(--paper);color:var(--ink)}
   document.getElementById('year').textContent=new Date().getFullYear();
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  const lessonChoices=document.querySelectorAll('.answer-choice');
+  const lessonFeedback=document.getElementById('lesson-feedback');
+  lessonChoices.forEach(choice=>choice.addEventListener('click',()=>{
+    lessonChoices.forEach(item=>item.setAttribute('aria-pressed',String(item===choice)));
+    if(choice.dataset.answer==='b'){
+      lessonFeedback.textContent='Correct. Business B generated ₹14.4 lakh in profit, compared with ₹8 lakh for Business A — despite having lower revenue. Its stronger margin made the difference.';
+      lessonFeedback.className='answer-feedback correct';
+    }else{
+      lessonFeedback.textContent='Not quite. Business A earned more revenue, but its 8% margin produced ₹8 lakh profit. Business B kept 18% and generated ₹14.4 lakh. Revenue alone does not tell the full story.';
+      lessonFeedback.className='answer-feedback incorrect';
+    }
+  }));
+
 </script>
 </body>
 </html>

@@ -30,6 +30,73 @@
 @media(max-width:640px){.wrap{width:calc(100% - 36px)}.nav{height:68px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;padding:18px;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:15px}.nav-links.open{display:flex}.nav-cta{display:none}.hero{padding:60px 0 54px}.hero h1{font-size:clamp(45px,12vw,60px)}.hero-lede{font-size:13px}.hero-art{min-height:285px}.panel-main{width:84%;padding:21px}.signal-heading{font-size:34px;margin:28px 0}.section{padding:70px 0}.section-head{margin-bottom:32px}.services-grid{grid-template-columns:1fr}.service{min-height:0;padding:23px}.work-grid{grid-template-columns:1fr}.work-card{min-height:0;padding:23px}.work-card h3{margin-top:24px}.approach-visual{min-height:280px}.industries{grid-template-columns:1fr 1fr}.industry{padding:17px 13px}.industry h3{font-size:16px}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap;gap:13px}.contact{padding:62px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
+/* Visual direction: warm minimal, restrained lavender, confident contrast */
+:root{
+  --paper:#f7f5f0;--white:#fffdfa;--ink:#292a27;--muted:#77766f;
+  --line:#e7e2d9;--lav:#a99aab;--lav-light:#eee9ed;--plum:#6f6b65;
+  --serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;
+  --display:"Manrope",Arial,sans-serif;--max:1160px
+}
+body{background:var(--paper);color:var(--ink)}
+.site-header{background:rgba(247,245,240,.92);border-bottom-color:rgba(41,42,39,.10);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.brand-mark{border-color:#d9d1c6;color:#756c61}
+.nav-links a:hover,.footer a:hover{color:#a99aab}
+.nav-cta,.button-dark{background:#292a27;border-color:#292a27}
+.nav-cta:hover,.button-dark:hover{background:#55564f;border-color:#55564f}
+.button-light{border-color:#cfc8bd}
+.button-light:hover{border-color:#a99aab;color:#746878}
+.hero{background:#292a27;color:#f7f5f0;padding-top:100px;padding-bottom:96px}
+.hero .eyebrow{color:#c7b8c8}
+.hero h1{color:#f7f5f0}
+.hero h1 em{color:#c9baca}
+.hero-lede{color:#c5c3bb}
+.hero-note{border-color:rgba(247,245,240,.18);color:#b9b6ae}
+.hero-art{
+  min-height:410px;background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)
+}
+.hero-art:before{border-color:rgba(201,186,202,.17)}
+.hero-art:after{border-color:rgba(201,186,202,.12)}
+.panel-main{
+  background:rgba(255,253,250,.82);border:1px solid rgba(255,255,255,.68);
+  box-shadow:0 24px 70px rgba(0,0,0,.20);backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px)
+}
+.signal-heading em{color:#a99aab}
+.signal-flow{color:#5d5b55}
+.signal-flow b{background:#d8d0d6}
+.signal-foot{border-color:#e7e2d9}
+.section-white{background:#fffdfa}
+.intro-aside .big-number{color:#d5cbd3}
+.services-grid{border-color:#e7e2d9}
+.service{border-color:#e7e2d9}
+.service:hover{background:#fffdfa}
+.service-no,.work-meta{color:#9b899d}
+.service-link{border-color:#ded5df;color:#756b78}
+.work-section{background:#eeeae2}
+.work-card{background:rgba(255,253,250,.82);border-color:#e1dbd1}
+.work-card:hover{background:#fffdfa;border-color:#cfc3d0}
+.work-tags span{background:#f3f0ed;border-color:#e6dfd7;color:#68665f}
+.work-number{color:rgba(169,154,171,.16)}
+.approach-visual{background:#e9e4e8;border-color:#e2dce2}
+.approach-visual:before{border-color:rgba(115,101,117,.22)}
+.approach-visual:after{border-color:rgba(169,154,171,.20)}
+.approach-stone{background:linear-gradient(145deg,#fffdfa,#ddd5dd)}
+.contact{background:#292a27}
+.contact .eyebrow{color:#c9baca}
+.contact p{color:#c8c6be}
+.contact .button{border-color:#c9c3b8;color:#f7f5f0}
+.contact .button:hover{background:#f7f5f0;color:#292a27}
+.footer{background:#20211f}
+.footer .brand-mark{border-color:rgba(255,255,255,.25);color:#d4c6d4}
+.footer .brand-name{color:#f7f5f0}
+@media(max-width:640px){
+  .nav-links{background:rgba(247,245,240,.98)}
+  .hero{padding-top:65px;padding-bottom:60px}
+  .hero-art{min-height:285px}
+}
+
   </style>
 </head>
 <body>

@@ -115,7 +115,46 @@ a{color:inherit;text-decoration:none}
 @media(max-width:680px){.wrap{width:calc(100% - 38px)}.nav{height:70px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:70px;left:0;right:0;padding:20px;background:rgba(247,245,240,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(22px);flex-direction:column;align-items:flex-start;gap:16px}.nav-links.open{display:flex}.nav-cta{display:none}.hero{padding:61px 0 55px}.hero h1{font-size:clamp(47px,12vw,63px)}.hero-lede{font-size:13px}.hero-art{min-height:310px;border-radius:22px}.panel-main{width:84%;padding:22px;border-radius:17px}.signal-heading{font-size:34px;margin:27px 0}.signal-float{padding:8px 10px;font-size:8px}.float-one{left:3%;bottom:7%}.float-two{right:3%;top:7%}.section{padding:76px 0}.section-head{margin-bottom:35px}.services-grid{grid-template-columns:1fr;gap:11px}.service{min-height:0;padding:24px;border-radius:17px}.service h3{margin-top:17px}.work-grid{grid-template-columns:1fr;gap:12px}.work-card{min-height:0;padding:24px;border-radius:18px}.work-card h3{margin-top:23px}.approach-visual{min-height:300px;border-radius:22px}.industries{grid-template-columns:1fr 1fr;gap:9px}.industry{padding:18px 15px;border-radius:14px}.industry h3{font-size:15px}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap;gap:13px}.contact{padding:70px 0}.contact-grid .button{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
-  </style>
+  /* New colour identity: pearl, midnight, crystal lavender and cool silver */
+:root{--paper:#f2f3f8;--white:#fbfbff;--ink:#171b2b;--muted:#697087;--line:rgba(91,101,139,.16);--lav:#b9a7f2;--lav-deep:#7662bd}
+body{background:var(--paper);color:var(--ink)}
+.site-header{background:rgba(246,247,253,.72);border-bottom-color:rgba(78,87,128,.14)}
+.brand-mark{border-color:rgba(151,130,219,.42);color:#7662bd;background:rgba(255,255,255,.58)}
+.nav-links{color:#505a76}.nav-links a:hover,.footer a:hover{color:#a992ed}
+.nav-cta{background:#202943;box-shadow:0 9px 28px rgba(21,30,56,.2)}
+.nav-cta:hover,.button-dark:hover{background:#39466b}
+.hero{color:#f8f8ff;background:radial-gradient(ellipse at 80% 12%,rgba(170,145,255,.30),transparent 34%),radial-gradient(ellipse at 8% 95%,rgba(104,139,220,.20),transparent 38%),linear-gradient(125deg,#151d35 0%,#222d4d 55%,#303451 100%)}
+.hero:before{border-color:rgba(218,218,255,.16);box-shadow:0 0 0 55px rgba(205,205,255,.025),0 0 0 110px rgba(205,205,255,.018)}
+.hero .eyebrow{color:#d6caff}.hero h1 em{color:#c7b5ff}.hero-lede{color:rgba(246,247,255,.76)}.hero-note{border-color:rgba(235,235,255,.18);color:rgba(246,247,255,.6)}
+.button-dark{background:#f8f8ff;color:#202943;border-color:#f8f8ff}.button-dark:hover{background:#dcd5ff;color:#202943}
+.button-light{border-color:rgba(232,231,255,.48);background:rgba(235,235,255,.08)}
+.hero-art{background:linear-gradient(140deg,rgba(224,220,255,.20),rgba(165,184,255,.055));border-color:rgba(239,237,255,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.24),0 35px 90px rgba(3,8,25,.25)}
+.hero-art:before,.hero-art:after{border-color:rgba(207,194,255,.28)}
+.panel-main{background:linear-gradient(145deg,rgba(255,255,255,.91),rgba(240,239,255,.70));border-color:rgba(255,255,255,.92);box-shadow:0 28px 70px rgba(5,10,35,.28),inset 0 1px 0 #fff}
+.signal-heading{color:#1b2136}.signal-heading em{color:#8871d2}.signal-flow{color:#515b7b}.signal-flow b{background:#c5b9ee}.signal-foot{border-color:rgba(71,75,115,.16)}
+.section-white{background:#fbfbff}.eyebrow,.service-no{color:#8170c5}.intro-aside .big-number{color:#d5cdf4}
+.section-head p,.intro-copy p,.approach-copy p{color:#697087}
+.services-grid{gap:15px;border:0}
+.service{background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(237,239,250,.58));border:1px solid rgba(164,169,207,.34);border-radius:21px;box-shadow:0 12px 35px rgba(39,48,91,.045),inset 0 1px 0 #fff}
+.service:hover{background:rgba(255,255,255,.96);border-color:rgba(165,143,238,.7);box-shadow:0 22px 45px rgba(39,48,91,.11)}
+.service-link{border-color:#d8d0f4;color:#7662bd}
+.work-section{color:#f8f8ff;background:radial-gradient(ellipse at 6% 0%,rgba(163,137,255,.23),transparent 34%),linear-gradient(135deg,#171e35 0%,#242d4a 100%)}
+.work-section:after{border-color:rgba(228,225,255,.13);box-shadow:0 0 0 55px rgba(228,225,255,.02),0 0 0 110px rgba(228,225,255,.015)}
+.work-section .eyebrow,.work-meta{color:#d2c4ff}.work-section .section-head p{color:rgba(245,246,255,.7)}
+.work-card{background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(193,190,255,.055));border-color:rgba(225,224,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 18px 50px rgba(0,0,0,.12)}
+.work-card:hover{border-color:rgba(211,195,255,.58);background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(193,190,255,.09))}
+.work-card p,.work-note{color:rgba(245,246,255,.72)}.work-tags span{color:#f2efff;background:rgba(224,219,255,.09);border-color:rgba(224,219,255,.22)}.work-number{color:rgba(206,190,255,.16)}
+.approach-visual{background:radial-gradient(circle at 25% 20%,rgba(255,255,255,.98),transparent 36%),linear-gradient(145deg,#e5e2f4,#f3f4fa);border-color:rgba(255,255,255,.94);box-shadow:0 25px 65px rgba(48,48,91,.1)}
+.approach-visual:before,.approach-visual:after{border-color:rgba(137,119,203,.27)}
+.approach-stone{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(195,181,244,.72));border-color:#fff;box-shadow:0 28px 65px rgba(83,69,142,.2),inset 0 1px 0 #fff}.step span{color:#8873ca}
+.industries{gap:13px}.industry{background:rgba(255,255,255,.55);border-color:rgba(164,169,207,.34);border-radius:17px}.industry:hover{background:rgba(255,255,255,.94);border-color:rgba(165,143,238,.55)}
+.contact{background:radial-gradient(ellipse at 85% 0%,rgba(161,139,255,.24),transparent 36%),linear-gradient(120deg,#171e35,#252d49)}
+.contact:after{border-color:rgba(228,225,255,.14);box-shadow:0 0 0 42px rgba(228,225,255,.02),0 0 0 84px rgba(228,225,255,.014)}
+.contact .eyebrow{color:#d4c6ff}.contact p{color:rgba(248,248,255,.72)}.contact .button{border-color:rgba(237,235,255,.5);background:rgba(225,222,255,.09)}.contact .button:hover{background:#fbfbff;color:#202943}
+.footer{background:#11182c;color:#b9bfd3}.footer .brand-name{color:#f8f8ff}.footer .brand-mark{border-color:rgba(220,215,255,.32);color:#d4c6ff;background:rgba(255,255,255,.06)}
+@media(max-width:680px){.nav-links{background:rgba(246,247,253,.96)}}
+
+</style>
 </head>
 <body>
 <header class="site-header">

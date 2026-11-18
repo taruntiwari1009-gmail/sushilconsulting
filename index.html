@@ -18,6 +18,31 @@
     @media(max-width:900px){.hero-grid,.approach{grid-template-columns:1fr;gap:35px}.hero{padding-top:75px}.hero-art{min-height:380px}.intro-grid{grid-template-columns:1fr;gap:25px}.intro-aside{display:flex;align-items:center;gap:18px}.intro-aside p{max-width:240px}.services-grid{grid-template-columns:repeat(2,1fr)}.industries{grid-template-columns:repeat(2,1fr)}.product-panel{padding:38px;grid-template-columns:1fr .65fr}.contact-grid{grid-template-columns:1fr}.contact-grid .button{justify-self:start}}
     @media(max-width:640px){.wrap{width:min(100% - 34px,var(--max))}.nav{height:68px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;padding:20px 24px 25px;background:rgba(247,245,241,.98);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}.nav-links.open{display:flex}.nav-cta{display:none}.hero{padding:62px 0 50px}.hero h1{font-size:49px}.hero-lede{font-size:14px}.hero-art{min-height:300px}.art-halo{width:280px}.art-core{width:115px;height:115px}.section{padding:70px 0}.section-head{margin-bottom:34px}.services-grid{grid-template-columns:1fr}.service{min-height:0;padding:25px}.industries{grid-template-columns:1fr 1fr}.industry{padding:19px 15px}.approach-visual{min-height:300px}.product-panel{padding:30px 24px;grid-template-columns:1fr;gap:0}.product-mark{min-height:160px}.product-mark span{width:130px;height:130px;font-size:48px}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap;gap:14px}.contact{padding:65px 0}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+    /* Refined glass surfaces and more deliberate spacing */
+    .site-header{background:rgba(250,248,245,.76);border-bottom-color:rgba(220,214,222,.55)}
+    .brand-mark{background:rgba(255,255,255,.52);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+    .nav-cta{border-color:rgba(81,71,91,.42);border-radius:2px;background:rgba(255,255,255,.28)}
+    .hero{padding-top:118px;padding-bottom:94px}
+    .hero h1{max-width:720px}
+    .hero-art{isolation:isolate}
+    .art-halo{background:radial-gradient(circle at 34% 28%,#fffefa 0,#f0eaf2 35%,#d9cede 68%,#c1b3cb 100%);box-shadow:inset 14px 14px 38px rgba(255,255,255,.9),inset -22px -22px 48px rgba(111,91,126,.13),0 42px 90px rgba(68,54,76,.13)}
+    .art-core{backdrop-filter:blur(12px)}
+    .art-caption{right:4%;bottom:12px;padding:10px 15px;border:1px solid rgba(255,255,255,.8);border-radius:999px;background:rgba(255,255,255,.48);backdrop-filter:blur(14px);box-shadow:0 8px 28px rgba(72,58,82,.08)}
+    .section{padding:112px 0}
+    .services-grid{gap:14px;border:0;background:transparent}
+    .service{min-height:260px;border:1px solid rgba(226,220,229,.9);border-radius:3px;background:rgba(255,255,255,.46);box-shadow:0 8px 28px rgba(57,45,65,.025);padding:30px;transition:transform .3s,background .3s,border-color .3s,box-shadow .3s}
+    .service:hover{background:rgba(255,255,255,.82);border-color:#d5c9dc;transform:translateY(-4px);box-shadow:0 18px 42px rgba(57,45,65,.07)}
+    .service h3{max-width:280px}
+    .service-link{color:var(--plum)}
+    .approach-visual{border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 22px 55px rgba(64,51,74,.06)}
+    .industries{gap:12px;background:transparent;border:0}
+    .industry{border:1px solid rgba(226,220,229,.9);background:rgba(255,255,255,.48);transition:transform .25s,background .25s}
+    .industry:hover{transform:translateY(-3px);background:rgba(255,255,255,.85)}
+    .contact{background:linear-gradient(115deg,#29262d 0%,#37313d 100%)}
+    .contact .button{background:rgba(255,255,255,.06);backdrop-filter:blur(12px);border-radius:2px}
+    .footer{background:#211f24}
+    @media(max-width:640px){.hero{padding-top:68px;padding-bottom:56px}.section{padding:76px 0}.services-grid{gap:10px}.service{min-height:0;padding:25px}.industries{gap:9px}.industry{padding:18px 14px}}
   </style>
 </head>
 <body>
@@ -25,7 +50,7 @@
   <div class="wrap nav">
     <a class="brand" href="#home" aria-label="Sushil Consulting home"><span class="brand-mark">S</span><span class="brand-name">SUSHIL CONSULTING<small>TECHNOLOGY &amp; INTELLIGENCE</small></span></a>
     <nav class="nav-links" id="nav-links" aria-label="Main navigation">
-      <a href="#expertise">Expertise</a><a href="#approach">Our Approach</a><a href="#industries">Industries</a><a href="#products">Products</a><a href="#about">About</a>
+      <a href="#expertise">Expertise</a><a href="#approach">Our Approach</a><a href="#industries">Industries</a><a href="#about">About</a>
     </nav>
     <a class="nav-cta" href="#contact">Start a conversation <span>↗</span></a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
@@ -47,7 +72,7 @@
   <section class="section section-white" id="about">
     <div class="wrap intro-grid">
       <div class="intro-aside"><div class="big-number">01</div><p>A considered approach to solving meaningful business problems.</p></div>
-      <div class="intro-copy reveal"><div class="eyebrow">Who we are</div><h2>We make complex things work beautifully.</h2><p>Sushil Consulting is a technology and data consulting company focused on helping organisations make better use of information, modernise the way they work and build solutions that stand up to real-world demands.</p><p>Our work brings together strategic thinking and hands-on execution — from strengthening data foundations to developing analytics, intelligent workflows and digital products. We value clear communication, sound engineering and outcomes that matter.</p></div>
+      <div class="intro-copy reveal"><div class="eyebrow">Who we are</div><h2>We make complexity useful.</h2><p>Sushil Consulting is an independent technology and data consultancy helping organisations turn complex challenges into clear, dependable solutions. We connect business understanding with engineering depth — making technology work harder, simpler and smarter.</p><p>From modern data foundations and enterprise analytics to applied AI and product engineering, we work across the full journey from first question to working solution. Every engagement is grounded in clear communication, sound engineering and outcomes that matter.</p></div>
     </div>
   </section>
   <section class="section" id="expertise">
@@ -66,7 +91,7 @@
   <section class="section section-white" id="approach">
     <div class="wrap approach">
       <div class="approach-visual reveal" aria-hidden="true"><div class="approach-stone"></div></div>
-      <div class="approach-copy reveal"><div class="eyebrow">How we work</div><h2>Good work is thoughtful before it is visible.</h2><p>We listen carefully, understand the context and stay close to the details. The goal is not to add complexity — it is to solve the right problem and deliver something dependable.</p>
+      <div class="approach-copy reveal"><div class="eyebrow">How we work</div><h2>Good work is thoughtful before it is visible.</h2><p>We start with the context, not a predetermined answer. We listen, challenge assumptions and stay close to the details. The goal is not to add complexity — it is to solve the right problem with the simplest dependable approach.</p>
         <div class="steps">
           <div class="step"><span>01</span><div><strong>Understand the challenge</strong><small>Align on the business need, people and existing systems.</small></div></div>
           <div class="step"><span>02</span><div><strong>Define the right solution</strong><small>Set a clear scope, approach and measures of success.</small></div></div>
@@ -78,7 +103,7 @@
   </section>
   <section class="section" id="industries">
     <div class="wrap">
-      <div class="section-head reveal"><div class="eyebrow">Where we apply our work</div><h2>Technology shaped around your world.</h2><p>Our capabilities can be applied across sectors where reliable information, intelligent systems and better decisions make a meaningful difference.</p></div>
+      <div class="section-head reveal"><div class="eyebrow">Where we apply our work</div><h2>Technology shaped around your world.</h2><p>We bring adaptable technology and data expertise to environments where reliable information, intelligent systems and better decisions make a meaningful difference.</p></div>
       <div class="industries">
         <div class="industry"><h3>Healthcare &amp; Life Sciences</h3><p>Clinical data, healthcare analytics and connected information.</p></div>
         <div class="industry"><h3>People &amp; HR</h3><p>Workforce intelligence, people data and enterprise reporting.</p></div>
@@ -87,25 +112,17 @@
       </div>
     </div>
   </section>
-  <section class="section section-white" id="products">
-    <div class="wrap">
-      <div class="product-panel reveal">
-        <div><div class="eyebrow">A product from Sushil Consulting</div><h2>Introducing Clarity OS.</h2><p>A student-focused platform designed to make university and course discovery more informed, structured and easier to navigate. Clarity OS is part of our commitment to building useful digital products around real decisions.</p><a class="button button-dark" href="mailto:sushil.mediation@gmail.com?subject=Clarity%20OS%20enquiry">Enquire about Clarity OS ↗</a></div>
-        <div class="product-mark" aria-hidden="true"><span>c.</span></div>
-      </div>
-    </div>
-  </section>
   <section class="section" id="about-capabilities">
     <div class="wrap intro-grid">
       <div class="intro-aside"><div class="eyebrow">Our standard</div></div>
-      <div class="intro-copy reveal"><h2>Quiet confidence. Work that holds up.</h2><p>We believe trust is earned through the quality of the work: considered recommendations, transparent communication, careful implementation and solutions that perform beyond the presentation.</p><p>We bring a practical engineering mindset to every engagement — taking responsibility for the details and keeping the intended outcome in view.</p></div>
+      <div class="intro-copy reveal"><h2>Built on clarity. Delivered with care.</h2><p>Trust is earned in the details: honest advice, thoughtful architecture, transparent communication and careful implementation. We focus on solutions that work in practice — not just on a presentation slide.</p><p>We bring a practical engineering mindset to every engagement, taking ownership from the first conversation through delivery and continuous improvement.</p></div>
     </div>
   </section>
   <section class="contact" id="contact">
     <div class="wrap contact-grid"><div><div class="eyebrow">Start a conversation</div><h2>Have something important to solve?</h2><p>Tell us what you are working towards. We would be glad to understand the challenge and explore how we can help.</p></div><a class="button" href="mailto:sushil.mediation@gmail.com?subject=Project%20enquiry%20%7C%20Sushil%20Consulting">Talk to Sushil Consulting <span>↗</span></a></div>
   </section>
 </main>
-<footer class="footer"><div class="wrap footer-row"><a class="brand" href="#home"><span class="brand-mark">S</span><span class="brand-name">SUSHIL CONSULTING<small>TECHNOLOGY &amp; INTELLIGENCE</small></span></a><div class="footer-links"><a href="#expertise">Expertise</a><a href="#approach">Approach</a><a href="#products">Products</a><a href="mailto:sushil.mediation@gmail.com">Email</a></div><span>© <span id="year"></span> Sushil Consulting</span></div></footer>
+<footer class="footer"><div class="wrap footer-row"><a class="brand" href="#home"><span class="brand-mark">S</span><span class="brand-name">SUSHIL CONSULTING<small>TECHNOLOGY &amp; INTELLIGENCE</small></span></a><div class="footer-links"><a href="#expertise">Expertise</a><a href="#approach">Approach</a><a href="#industries">Industries</a><a href="mailto:sushil.mediation@gmail.com">Email</a></div><span>© <span id="year"></span> Sushil Consulting</span></div></footer>
 <script>
   const toggle=document.getElementById('menu-toggle');
   const nav=document.getElementById('nav-links');

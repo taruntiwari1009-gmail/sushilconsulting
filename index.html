@@ -43,6 +43,20 @@
     .contact .button{background:rgba(255,255,255,.06);backdrop-filter:blur(12px);border-radius:2px}
     .footer{background:#211f24}
     @media(max-width:640px){.hero{padding-top:68px;padding-bottom:56px}.section{padding:76px 0}.services-grid{gap:10px}.service{min-height:0;padding:25px}.industries{gap:9px}.industry{padding:18px 14px}}
+
+    /* Selected work: editorial case-study cards */
+    .work-section{background:#f7f5f1}
+    .work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .work-card{position:relative;overflow:hidden;min-height:300px;padding:30px;border:1px solid rgba(226,220,229,.9);background:rgba(255,255,255,.58);box-shadow:0 12px 34px rgba(57,45,65,.035);transition:transform .28s,background .28s,border-color .28s}
+    .work-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.9);border-color:#d5c9dc}
+    .work-meta{display:flex;justify-content:space-between;gap:12px;align-items:center;color:var(--lav-deep);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+    .work-card h3{font:400 clamp(25px,3vw,34px)/1.16 var(--serif);letter-spacing:-.035em;margin:34px 0 12px;max-width:440px}
+    .work-card p{max-width:510px;color:var(--muted);font-size:13px;line-height:1.85}
+    .work-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
+    .work-tags span{font-size:10px;color:#655a6b;padding:6px 9px;border:1px solid rgba(205,194,211,.75);background:rgba(255,255,255,.42)}
+    .work-note{margin-top:22px;color:#89818c;font-size:11px;line-height:1.7}
+    .work-number{position:absolute;right:24px;bottom:10px;font:400 74px/.9 var(--serif);color:rgba(190,177,199,.16);pointer-events:none}
+    @media(max-width:640px){.work-grid{grid-template-columns:1fr}.work-card{min-height:0;padding:25px}.work-card h3{margin-top:27px}}
   </style>
 </head>
 <body>
@@ -50,7 +64,7 @@
   <div class="wrap nav">
     <a class="brand" href="#home" aria-label="Sushil Consulting home"><span class="brand-mark">S</span><span class="brand-name">SUSHIL CONSULTING<small>TECHNOLOGY &amp; INTELLIGENCE</small></span></a>
     <nav class="nav-links" id="nav-links" aria-label="Main navigation">
-      <a href="#expertise">Expertise</a><a href="#approach">Our Approach</a><a href="#industries">Industries</a><a href="#about">About</a>
+      <a href="#expertise">Expertise</a><a href="#approach">Our Approach</a><a href="#industries">Industries</a><a href="#selected-work">Selected work</a><a href="#about">About</a>
     </nav>
     <a class="nav-cta" href="#contact">Start a conversation <span>↗</span></a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
@@ -88,6 +102,19 @@
       </div>
     </div>
   </section>
+
+  <section class="section work-section" id="selected-work">
+    <div class="wrap">
+      <div class="section-head reveal"><div class="eyebrow">Selected work</div><h2>Practical systems. Measurable thinking.</h2><p>A selection of data, analytics and engineering work across enterprise environments and independent problem-solving. Client-sensitive details are intentionally kept high level.</p></div>
+      <div class="work-grid">
+        <article class="work-card reveal"><div class="work-meta"><span>01 / Enterprise analytics</span><span>Professional engagement</span></div><h3>Global workforce analytics implementation</h3><p>Supported a global Workday-to-Visier implementation through workforce data mapping, reconciliation and reporting validation. Contributed to security redesign and role-based access governance, working with People Analytics stakeholders to strengthen data quality and reporting confidence.</p><div class="work-tags"><span>Workday</span><span>Visier</span><span>RBAC</span><span>Data validation</span></div><div class="work-note">Client and employee information are not displayed.</div><span class="work-number" aria-hidden="true">01</span></article>
+        <article class="work-card reveal"><div class="work-meta"><span>02 / Network science</span><span>Analytics project</span></div><h3>Network graph analytics engine</h3><p>Built network analysis models to identify influential relationships and connections. Applied multiple centrality measures to understand network structure and surface useful paths for outreach prioritisation.</p><div class="work-tags"><span>Python</span><span>NetworkX</span><span>Graph analytics</span><span>Centrality</span></div><span class="work-number" aria-hidden="true">02</span></article>
+        <article class="work-card reveal"><div class="work-meta"><span>03 / Data platforms</span><span>Professional engagement</span></div><h3>Scalable ETL pipeline optimisation</h3><p>Worked on cloud-based data pipelines and automation across high-volume datasets. Focus areas included SQL and pipeline optimisation, automated data quality controls, and more dependable movement of data between platforms.</p><div class="work-tags"><span>Python</span><span>SQL</span><span>Informatica IICS</span><span>AWS</span><span>Databricks</span></div><span class="work-number" aria-hidden="true">03</span></article>
+        <article class="work-card reveal"><div class="work-meta"><span>04 / Workflow automation</span><span>Engineering project</span></div><h3>Real-time event notification system</h3><p>Developed a trigger-based notification workflow using Python and APIs to replace manual monitoring and help teams respond to important events with less delay.</p><div class="work-tags"><span>Python</span><span>APIs</span><span>Event triggers</span><span>Automation</span></div><span class="work-number" aria-hidden="true">04</span></article>
+      </div>
+      <p class="work-note">Project descriptions are intentionally concise. Detailed architecture, screenshots and outcomes can be shared where permissions allow.</p>
+    </div>
+  </section>
   <section class="section section-white" id="approach">
     <div class="wrap approach">
       <div class="approach-visual reveal" aria-hidden="true"><div class="approach-stone"></div></div>
@@ -122,7 +149,7 @@
     <div class="wrap contact-grid"><div><div class="eyebrow">Start a conversation</div><h2>Have something important to solve?</h2><p>Tell us what you are working towards. We would be glad to understand the challenge and explore how we can help.</p></div><a class="button" href="mailto:sushil.mediation@gmail.com?subject=Project%20enquiry%20%7C%20Sushil%20Consulting">Talk to Sushil Consulting <span>↗</span></a></div>
   </section>
 </main>
-<footer class="footer"><div class="wrap footer-row"><a class="brand" href="#home"><span class="brand-mark">S</span><span class="brand-name">SUSHIL CONSULTING<small>TECHNOLOGY &amp; INTELLIGENCE</small></span></a><div class="footer-links"><a href="#expertise">Expertise</a><a href="#approach">Approach</a><a href="#industries">Industries</a><a href="mailto:sushil.mediation@gmail.com">Email</a></div><span>© <span id="year"></span> Sushil Consulting</span></div></footer>
+<footer class="footer"><div class="wrap footer-row"><a class="brand" href="#home"><span class="brand-mark">S</span><span class="brand-name">SUSHIL CONSULTING<small>TECHNOLOGY &amp; INTELLIGENCE</small></span></a><div class="footer-links"><a href="#expertise">Expertise</a><a href="#approach">Approach</a><a href="#industries">Industries</a><a href="#selected-work">Selected work</a><a href="mailto:sushil.mediation@gmail.com">Email</a></div><span>© <span id="year"></span> Sushil Consulting</span></div></footer>
 <script>
   const toggle=document.getElementById('menu-toggle');
   const nav=document.getElementById('nav-links');

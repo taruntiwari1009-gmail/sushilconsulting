@@ -505,7 +505,7 @@ body{background:var(--paper);color:var(--ink)}
           'apikey':'sb_publishable_4PulHIrI6AUFjW7yf_6L1g_xaW-kvG8',
           'Authorization':'Bearer sb_publishable_4PulHIrI6AUFjW7yf_6L1g_xaW-kvG8',
           'Content-Type':'application/json',
-          'Prefer':'return=minimal'
+          'Prefer':'return=representation'
         },
         body:JSON.stringify(payload)
       });
@@ -514,9 +514,31 @@ body{background:var(--paper);color:var(--ink)}
         try{const data=await response.json();if(data&&data.message)detail=data.message;}catch(_){}
         throw new Error(detail);
       }
+      const savedRows=await response.json();
+      const savedEnquiry=savedRows&&savedRows[0];
+      if(!savedEnquiry||!savedEnquiry.id) throw new Error('Your enquiry was saved, but we could not start the email confirmation. Please contact us at sushil.mediation@gmail.com.');
       enquiryForm.reset();
       enquiryStatus.className='form-status success';
-      enquiryStatus.textContent='Thank you — your enquiry has been received. We’ll be in touch using the email address you provided.';
+      enquiryStatus.textContent='Your enquiry has been received. Sending your confirmation email…';
+      try{
+        const emailResponse=await fetch('https://uefkzsryyzewczncsvdn.supabase.co/functions/v1/send-enquiry-emails',{
+          method:'POST',
+          headers:{
+            'apikey':'sb_publishable_4PulHIrI6AUFjW7yf_6L1g_xaW-kvG8',
+            'Authorization':'Bearer sb_publishable_4PulHIrI6AUFjW7yf_6L1g_xaW-kvG8',
+            'Content-Type':'application/json'
+          },
+          body:JSON.stringify({id:savedEnquiry.id})
+        });
+        if(!emailResponse.ok){
+          const emailResult=await emailResponse.json().catch(()=>({}));
+          throw new Error(emailResult.error||emailResult.message||'Email delivery is pending.');
+        }
+        enquiryStatus.textContent='Thank you — your enquiry has been received. A confirmation email is on its way.';
+      }catch(emailError){
+        console.error('Enquiry saved; email delivery needs attention:',emailError);
+        enquiryStatus.textContent='Your enquiry was received successfully. We could not send the email confirmation just now, but your details are safely recorded.';
+      }
     }catch(error){
       enquiryStatus.className='form-status error';
       enquiryStatus.textContent='We could not submit your enquiry. '+(error.message||'Please try again or email sushil.mediation@gmail.com.');

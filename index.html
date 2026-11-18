@@ -226,7 +226,36 @@ body{background:var(--paper);color:var(--ink)}
 @media(max-width:760px){.lesson-layout{grid-template-columns:1fr}.lesson-copy{padding:23px}.company-row{grid-template-columns:1fr 1fr;gap:12px}.company-name{grid-column:1/-1}.data-literacy-strip{grid-template-columns:1fr 1fr}.lesson-takeaway{padding:18px}}
 @media(max-width:420px){.company-metric strong{font-size:12px}.lesson-table{padding:14px}.data-literacy-strip{gap:8px}.answer-options{flex-wrap:wrap}}
 
-</style>
+
+/* On-site enquiry form */
+.contact-grid{grid-template-columns:.9fr 1.1fr;align-items:start;gap:54px}
+.contact-copy{position:relative;z-index:1}
+.contact-copy p{max-width:500px}
+.contact-direct{margin-top:28px;font-size:11px!important}
+.contact-direct a{color:#d8ccff;border-bottom:1px solid rgba(216,204,255,.45)}
+.enquiry-form{position:relative;z-index:2;padding:30px;border:1px solid rgba(232,231,255,.23);border-radius:23px;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(192,190,255,.055));box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 22px 55px rgba(0,0,0,.12);backdrop-filter:blur(24px) saturate(145%);-webkit-backdrop-filter:blur(24px) saturate(145%)}
+.form-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px;color:#e0d7ff;font-size:9px;letter-spacing:.16em}
+.form-heading small{color:rgba(248,248,255,.53);font-size:9px;letter-spacing:0}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-grid label{display:flex;flex-direction:column;gap:7px;color:rgba(248,248,255,.84);font-size:10px;font-weight:600;letter-spacing:.04em}
+.form-grid .form-wide{grid-column:1/-1}
+.form-grid input,.form-grid select,.form-grid textarea{width:100%;min-width:0;padding:12px 13px;border:1px solid rgba(229,228,255,.2);border-radius:11px;outline:none;background:rgba(12,19,42,.28);color:#fff;font:12px/1.5 var(--sans);transition:border-color .2s,background .2s}
+.form-grid input::placeholder,.form-grid textarea::placeholder{color:rgba(244,244,255,.4)}
+.form-grid select{color-scheme:dark}
+.form-grid select:invalid{color:rgba(244,244,255,.5)}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{border-color:#b9a7f2;background:rgba(12,19,42,.42)}
+.form-grid textarea{resize:vertical;min-height:118px}
+.field-hint{color:rgba(248,248,255,.46);font-size:9px;font-weight:400;letter-spacing:0}
+.form-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.enquiry-submit{margin-top:20px;border:0;background:#f5f2ff;color:#202943;cursor:pointer;font-weight:700}
+.enquiry-submit:hover{background:#dcd5ff;transform:translateY(-2px)}
+.enquiry-submit:disabled{opacity:.62;cursor:wait;transform:none}
+.form-status{margin:12px 0 0!important;max-width:none!important;color:rgba(248,248,255,.58)!important;font-size:10px!important;line-height:1.6}
+.form-status.success{color:#c9f0df!important}.form-status.error{color:#ffd0d0!important}
+@media(max-width:950px){.contact-grid{grid-template-columns:1fr;gap:30px}.enquiry-form{max-width:720px;width:100%}}
+@media(max-width:680px){.enquiry-form{padding:22px 17px;border-radius:18px}.form-grid{grid-template-columns:1fr;gap:13px}.form-grid .form-wide{grid-column:auto}.form-heading{align-items:flex-start;flex-direction:column;gap:4px}.enquiry-submit{width:100%;justify-content:center}}
+
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -332,12 +361,12 @@ body{background:var(--paper);color:var(--ink)}
     <div class="wrap">
       <div class="section-head reveal"><div class="eyebrow">How we help</div><h2>Start with the business problem. Deliver the working solution.</h2><p>These are practical services with clear outputs. We can support a defined piece of work, improve an existing setup or work alongside your team to deliver a larger initiative.</p></div>
       <div class="services-grid">
-        <article class="service reveal"><span class="service-no">01 / CONNECT YOUR DATA</span><h3>Data Engineering &amp; Integration</h3><p>Bring data from disconnected systems into a dependable flow. We design and improve ETL pipelines, integrations, transformations and data quality checks.</p><a class="service-link" href="mailto:sushil.mediation@gmail.com?subject=Discuss%20data%20engineering%20and%20integration%20%7C%20Sushil%20Consulting&body=Hello%20Sushil%20Consulting%2C%0A%0AI%20would%20like%20to%20discuss%20data%20engineering%20%26%20integration.%0A%0AMy%20business%20%2F%20organisation%3A%0AThe%20challenge%20I%20am%20looking%20to%20solve%3A%0A%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0A%0AThank%20you.">Discuss this service ↗</a></article>
-        <article class="service reveal"><span class="service-no">02 / SEE WHAT IS HAPPENING</span><h3>Business Intelligence &amp; Reporting</h3><p>Replace scattered spreadsheets and unclear metrics with structured dashboards, consistent reporting and performance measures your teams can use.</p><a class="service-link" href="mailto:sushil.mediation@gmail.com?subject=Discuss%20business%20intelligence%20and%20reporting%20%7C%20Sushil%20Consulting&body=Hello%20Sushil%20Consulting%2C%0A%0AI%20would%20like%20to%20discuss%20business%20intelligence%20%26%20reporting.%0A%0AMy%20business%20%2F%20organisation%3A%0AThe%20challenge%20I%20am%20looking%20to%20solve%3A%0A%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0A%0AThank%20you.">Discuss this service ↗</a></article>
-        <article class="service reveal"><span class="service-no">03 / FIND THE SIGNAL</span><h3>Advanced Analytics &amp; Applied AI</h3><p>Use statistical analysis, machine learning and network analytics to uncover patterns, prioritise opportunities and support better-informed decisions — where the data and use case justify it.</p><a class="service-link" href="mailto:sushil.mediation@gmail.com?subject=Discuss%20advanced%20analytics%20and%20applied%20AI%20%7C%20Sushil%20Consulting&body=Hello%20Sushil%20Consulting%2C%0A%0AI%20would%20like%20to%20discuss%20advanced%20analytics%20%26%20applied%20ai.%0A%0AMy%20business%20%2F%20organisation%3A%0AThe%20challenge%20I%20am%20looking%20to%20solve%3A%0A%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0A%0AThank%20you.">Discuss this service ↗</a></article>
-        <article class="service reveal"><span class="service-no">04 / UNDERSTAND YOUR WORKFORCE</span><h3>People &amp; Enterprise Analytics</h3><p>Improve workforce reporting, people-data integrations, reconciliation and role-based access governance so HR and business teams can work with greater confidence.</p><a class="service-link" href="mailto:sushil.mediation@gmail.com?subject=Discuss%20people%20and%20enterprise%20analytics%20%7C%20Sushil%20Consulting&body=Hello%20Sushil%20Consulting%2C%0A%0AI%20would%20like%20to%20discuss%20people%20%26%20enterprise%20analytics.%0A%0AMy%20business%20%2F%20organisation%3A%0AThe%20challenge%20I%20am%20looking%20to%20solve%3A%0A%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0A%0AThank%20you.">Discuss this service ↗</a></article>
-        <article class="service reveal"><span class="service-no">05 / IMPROVE HOW WORK GETS DONE</span><h3>Process Automation &amp; Technology Consulting</h3><p>Identify repetitive or fragile processes and redesign them with APIs, workflow automation and fit-for-purpose technology. Get a clear roadmap before investing in a larger build.</p><a class="service-link" href="mailto:sushil.mediation@gmail.com?subject=Discuss%20process%20automation%20and%20technology%20consulting%20%7C%20Sushil%20Consulting&body=Hello%20Sushil%20Consulting%2C%0A%0AI%20would%20like%20to%20discuss%20process%20automation%20%26%20technology%20consulting.%0A%0AMy%20business%20%2F%20organisation%3A%0AThe%20challenge%20I%20am%20looking%20to%20solve%3A%0A%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0A%0AThank%20you.">Discuss this service ↗</a></article>
-        <article class="service reveal"><span class="service-no">06 / MAKE IT WORK IN PRACTICE</span><h3>Implementation &amp; Technical Support</h3><p>Move from plan to working system with integration, configuration, testing, documentation and handover — with support shaped around the needs of your team.</p><a class="service-link" href="mailto:sushil.mediation@gmail.com?subject=Discuss%20implementation%20and%20technical%20support%20%7C%20Sushil%20Consulting&body=Hello%20Sushil%20Consulting%2C%0A%0AI%20would%20like%20to%20discuss%20implementation%20%26%20technical%20support.%0A%0AMy%20business%20%2F%20organisation%3A%0AThe%20challenge%20I%20am%20looking%20to%20solve%3A%0A%0APlease%20let%20me%20know%20a%20convenient%20time%20to%20connect.%0A%0AThank%20you.">Discuss this service ↗</a></article>
+        <article class="service reveal"><span class="service-no">01 / CONNECT YOUR DATA</span><h3>Data Engineering &amp; Integration</h3><p>Bring data from disconnected systems into a dependable flow. We design and improve ETL pipelines, integrations, transformations and data quality checks.</p><a class="service-link" href="#contact" data-enquiry-service="Data Engineering & Integration">Discuss this service ↗</a></article>
+        <article class="service reveal"><span class="service-no">02 / SEE WHAT IS HAPPENING</span><h3>Business Intelligence &amp; Reporting</h3><p>Replace scattered spreadsheets and unclear metrics with structured dashboards, consistent reporting and performance measures your teams can use.</p><a class="service-link" href="#contact" data-enquiry-service="Business Intelligence & Reporting">Discuss this service ↗</a></article>
+        <article class="service reveal"><span class="service-no">03 / FIND THE SIGNAL</span><h3>Advanced Analytics &amp; Applied AI</h3><p>Use statistical analysis, machine learning and network analytics to uncover patterns, prioritise opportunities and support better-informed decisions — where the data and use case justify it.</p><a class="service-link" href="#contact" data-enquiry-service="Advanced Analytics & Applied AI">Discuss this service ↗</a></article>
+        <article class="service reveal"><span class="service-no">04 / UNDERSTAND YOUR WORKFORCE</span><h3>People &amp; Enterprise Analytics</h3><p>Improve workforce reporting, people-data integrations, reconciliation and role-based access governance so HR and business teams can work with greater confidence.</p><a class="service-link" href="#contact" data-enquiry-service="People & Enterprise Analytics">Discuss this service ↗</a></article>
+        <article class="service reveal"><span class="service-no">05 / IMPROVE HOW WORK GETS DONE</span><h3>Process Automation &amp; Technology Consulting</h3><p>Identify repetitive or fragile processes and redesign them with APIs, workflow automation and fit-for-purpose technology. Get a clear roadmap before investing in a larger build.</p><a class="service-link" href="#contact" data-enquiry-service="Process Automation & Technology Consulting">Discuss this service ↗</a></article>
+        <article class="service reveal"><span class="service-no">06 / MAKE IT WORK IN PRACTICE</span><h3>Implementation &amp; Technical Support</h3><p>Move from plan to working system with integration, configuration, testing, documentation and handover — with support shaped around the needs of your team.</p><a class="service-link" href="#contact" data-enquiry-service="Implementation & Technical Support">Discuss this service ↗</a></article>
       </div>
     </div>
   </section>
@@ -385,7 +414,39 @@ body{background:var(--paper);color:var(--ink)}
     </div>
   </section>
   <section class="contact" id="contact">
-    <div class="wrap contact-grid"><div><div class="eyebrow">Tell us what is not working</div><h2>Let’s turn your challenge into a clear plan.</h2><p>Whether your reports do not reconcile, your team is buried in manual work or your data systems are not connecting, start with a short conversation. We will understand the problem and discuss a practical next step.</p></div><a class="button" href="mailto:sushil.mediation@gmail.com?subject=Project%20enquiry%20%7C%20Sushil%20Consulting">Discuss your project <span>↗</span></a></div>
+    <div class="wrap contact-grid">
+      <div class="contact-copy">
+        <div class="eyebrow">Tell us what is not working</div>
+        <h2>Let’s turn your challenge into a clear plan.</h2>
+        <p>Whether your reports do not reconcile, your team is buried in manual work or your data systems are not connecting, tell us a little about the challenge. We’ll review your enquiry and discuss a practical next step.</p>
+        <p class="contact-direct">Prefer email? <a href="mailto:sushil.mediation@gmail.com">sushil.mediation@gmail.com ↗</a></p>
+      </div>
+      <form class="enquiry-form" id="enquiry-form">
+        <div class="form-heading"><span>PROJECT ENQUIRY</span><small>All fields marked * are required</small></div>
+        <div class="form-grid">
+          <label>Full name *<input name="full_name" type="text" autocomplete="name" minlength="2" maxlength="120" placeholder="Your name" required></label>
+          <label>Business email *<input name="business_email" type="email" autocomplete="email" maxlength="254" placeholder="you@company.com" required></label>
+          <label class="form-wide">Company / organisation<input name="company" type="text" autocomplete="organization" maxlength="160" placeholder="Where do you work? (optional)"></label>
+          <label class="form-wide">What can we help with? *
+            <select name="service" id="enquiry-service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="Data Engineering & Integration">Data Engineering & Integration</option><option value="Business Intelligence & Reporting">Business Intelligence & Reporting</option><option value="Advanced Analytics & Applied AI">Advanced Analytics & Applied AI</option><option value="People & Enterprise Analytics">People & Enterprise Analytics</option><option value="Process Automation & Technology Consulting">Process Automation & Technology Consulting</option><option value="Implementation & Technical Support">Implementation & Technical Support</option>
+              <option value="General enquiry">Something else / not sure yet</option>
+            </select>
+          </label>
+          <label class="form-wide">Indicative project budget
+            <select name="budget_range">
+              <option value="">Prefer not to say</option>
+              <option>Under ₹50,000</option><option>₹50,000–₹2 lakh</option><option>₹2–5 lakh</option><option>₹5–10 lakh</option><option>₹10 lakh+</option><option>Not sure yet</option>
+            </select>
+          </label>
+          <label class="form-wide">Tell us about the challenge *<textarea name="project_details" rows="5" minlength="20" maxlength="3000" placeholder="What are you trying to achieve, what is getting in the way, and what would a useful outcome look like?" required></textarea><small class="field-hint">Please do not include passwords, confidential records or sensitive personal information.</small></label>
+        </div>
+        <div class="form-trap" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+        <button class="button enquiry-submit" type="submit"><span class="submit-label">Send project enquiry</span><span aria-hidden="true">↗</span></button>
+        <p class="form-status" id="enquiry-status" role="status" aria-live="polite">Your details are used only to respond to this enquiry.</p>
+      </form>
+    </div>
   </section>
 </main>
 <footer class="footer"><div class="wrap footer-row"><a class="brand" href="#home"><span class="brand-mark">S</span><span class="brand-name">SUSHIL CONSULTING<small>TECHNOLOGY &amp; INTELLIGENCE</small></span></a><div class="footer-links"><a href="#expertise">Expertise</a><a href="#approach">Approach</a><a href="#industries">Industries</a><a href="#selected-work">Selected work</a><a href="mailto:sushil.mediation@gmail.com">Email</a></div><span>© <span id="year"></span> Sushil Consulting</span></div></footer>
@@ -409,6 +470,60 @@ body{background:var(--paper);color:var(--ink)}
       lessonFeedback.className='answer-feedback incorrect';
     }
   }));
+
+
+  // Public project enquiry form: only the Supabase publishable key is used here.
+  const enquiryForm=document.getElementById('enquiry-form');
+  const enquiryStatus=document.getElementById('enquiry-status');
+  const enquiryService=document.getElementById('enquiry-service');
+  document.querySelectorAll('[data-enquiry-service]').forEach(link=>link.addEventListener('click',()=>{
+    enquiryService.value=link.dataset.enquiryService;
+  }));
+  enquiryForm.addEventListener('submit',async event=>{
+    event.preventDefault();
+    if(!enquiryForm.reportValidity()) return;
+    const fields=new FormData(enquiryForm);
+    if(String(fields.get('website')||'').trim()) return;
+    const submit=enquiryForm.querySelector('button[type="submit"]');
+    const label=submit.querySelector('.submit-label');
+    const original=label.textContent;
+    submit.disabled=true;label.textContent='Sending…';
+    enquiryStatus.className='form-status';
+    enquiryStatus.textContent='Sending your enquiry securely…';
+    const payload={
+      full_name:String(fields.get('full_name')).trim(),
+      business_email:String(fields.get('business_email')).trim(),
+      company:String(fields.get('company')||'').trim()||null,
+      service:String(fields.get('service')),
+      budget_range:String(fields.get('budget_range')||'')||null,
+      project_details:String(fields.get('project_details')).trim()
+    };
+    try{
+      const response=await fetch('https://uefkzsryyzewczncsvdn.supabase.co/rest/v1/project_enquiries',{
+        method:'POST',
+        headers:{
+          'apikey':'sb_publishable_4PulHIrI6AUFjW7yf_6L1g_xaW-kvG8',
+          'Authorization':'Bearer sb_publishable_4PulHIrI6AUFjW7yf_6L1g_xaW-kvG8',
+          'Content-Type':'application/json',
+          'Prefer':'return=minimal'
+        },
+        body:JSON.stringify(payload)
+      });
+      if(!response.ok){
+        let detail='Please try again in a moment.';
+        try{const data=await response.json();if(data&&data.message)detail=data.message;}catch(_){}
+        throw new Error(detail);
+      }
+      enquiryForm.reset();
+      enquiryStatus.className='form-status success';
+      enquiryStatus.textContent='Thank you — your enquiry has been received. We’ll be in touch using the email address you provided.';
+    }catch(error){
+      enquiryStatus.className='form-status error';
+      enquiryStatus.textContent='We could not submit your enquiry. '+(error.message||'Please try again or email sushil.mediation@gmail.com.');
+    }finally{
+      submit.disabled=false;label.textContent=original;
+    }
+  });
 
 </script>
 </body>

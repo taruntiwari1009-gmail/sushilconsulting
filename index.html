@@ -97,6 +97,119 @@ body{background:var(--paper);color:var(--ink)}
   .hero-art{min-height:285px}
 }
 
+
+/* Balanced glassmorphism direction: light foundations, dark contrast, restrained glass */
+:root{
+  --paper:#f6f4ef;--white:#fffdfa;--ink:#282925;--muted:#77766f;
+  --line:#e6e1d9;--lav:#ad9db2;--lav-light:#eee8ef;--plum:#716b73;
+}
+.site-header{
+  background:rgba(246,244,239,.78);
+  border-bottom:1px solid rgba(40,41,37,.09);
+  backdrop-filter:blur(24px) saturate(145%);
+  -webkit-backdrop-filter:blur(24px) saturate(145%);
+}
+.hero{
+  background:
+    radial-gradient(ellipse at 82% 12%,rgba(173,157,180,.17),transparent 34%),
+    linear-gradient(135deg,#282925 0%,#30312e 100%);
+}
+.hero-art{
+  background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.035));
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 24px 70px rgba(0,0,0,.12);
+  backdrop-filter:blur(26px) saturate(140%);
+  -webkit-backdrop-filter:blur(26px) saturate(140%);
+}
+.panel-main{
+  background:linear-gradient(145deg,rgba(255,253,250,.84),rgba(255,253,250,.66));
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:0 24px 70px rgba(0,0,0,.23),inset 0 1px 0 rgba(255,255,255,.75);
+  backdrop-filter:blur(28px) saturate(150%);
+  -webkit-backdrop-filter:blur(28px) saturate(150%);
+}
+.section{position:relative}
+.section-white{background:#fffdfa}
+.services-grid{gap:12px;border:0}
+.service{
+  min-height:238px;
+  background:rgba(255,255,255,.58);
+  border:1px solid rgba(220,214,207,.72);
+  box-shadow:0 8px 28px rgba(54,49,43,.025);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.service:hover{
+  background:rgba(255,255,255,.88);
+  border-color:rgba(173,157,180,.52);
+  box-shadow:0 16px 38px rgba(54,49,43,.07);
+  transform:translateY(-2px);
+}
+.work-section{
+  color:#f6f4ef;
+  background:
+    radial-gradient(ellipse at 12% 0%,rgba(173,157,180,.13),transparent 34%),
+    linear-gradient(145deg,#292a27,#343530);
+}
+.work-section .eyebrow{color:#cbbbd0}
+.work-section .section-head p{color:#c5c3bb}
+.work-card{
+  background:linear-gradient(145deg,rgba(255,255,255,.115),rgba(255,255,255,.055));
+  border:1px solid rgba(255,255,255,.17);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter:blur(22px) saturate(135%);
+  -webkit-backdrop-filter:blur(22px) saturate(135%);
+}
+.work-card:hover{
+  background:linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.08));
+  border-color:rgba(219,204,224,.42);
+}
+.work-meta{color:#d1bfd4}
+.work-card h3{color:#fbfaf7}
+.work-card p,.work-note{color:#c7c5bd}
+.work-tags span{
+  color:#eee9ef;background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.17);
+}
+.work-number{color:rgba(222,207,228,.12)}
+.approach-visual{
+  background:linear-gradient(145deg,rgba(238,232,239,.82),rgba(255,253,250,.68));
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 18px 50px rgba(48,42,48,.06);
+}
+.approach-stone{
+  background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(215,204,219,.68));
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 24px 55px rgba(77,70,78,.12),inset 0 1px 0 #fff;
+}
+.industry{
+  background:rgba(255,255,255,.48);
+  border-color:#e6e1d9;
+  transition:background .2s,border-color .2s;
+}
+.industry:hover{background:rgba(255,255,255,.88)}
+.contact{
+  background:
+    radial-gradient(ellipse at 85% 15%,rgba(173,157,180,.15),transparent 36%),
+    #292a27;
+}
+.contact .button{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.45);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.contact .button:hover{background:#f6f4ef;color:#292a27}
+.footer{background:#20211f}
+@media(max-width:640px){
+  .services-grid{gap:9px}
+  .service{min-height:0}
+  .work-card{background:rgba(255,255,255,.09)}
+}
+@media(prefers-reduced-motion:no-preference){
+  .service,.work-card,.industry{transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease}
+}
+
   </style>
 </head>
 <body>

@@ -499,24 +499,29 @@ body{background:var(--paper);color:var(--ink)}
       project_details:String(fields.get('project_details')).trim()
     };
     try{
-      const response=await fetch('https://uefkzsryyzewczncsvdn.supabase.co/rest/v1/project_enquiries',{
+      const response=await fetch('https://uefkzsryyzewczncsvdn.supabase.co/rest/v1/rpc/submit_project_enquiry',{
         method:'POST',
         headers:{
           'apikey':'sb_publishable_4PulHIrI6AUFjW7yf_6L1g_xaW-kvG8',
           'Authorization':'Bearer sb_publishable_4PulHIrI6AUFjW7yf_6L1g_xaW-kvG8',
-          'Content-Type':'application/json',
-          'Prefer':'return=representation'
+          'Content-Type':'application/json'
         },
-        body:JSON.stringify(payload)
+        body:JSON.stringify({
+          p_full_name:payload.full_name,
+          p_business_email:payload.business_email,
+          p_company:payload.company,
+          p_service:payload.service,
+          p_budget_range:payload.budget_range,
+          p_project_details:payload.project_details
+        })
       });
       if(!response.ok){
         let detail='Please try again in a moment.';
         try{const data=await response.json();if(data&&data.message)detail=data.message;}catch(_){}
         throw new Error(detail);
       }
-      const savedRows=await response.json();
-      const savedEnquiry=savedRows&&savedRows[0];
-      if(!savedEnquiry||!savedEnquiry.id) throw new Error('Your enquiry was saved, but we could not start the email confirmation. Please contact us at sushil.mediation@gmail.com.');
+      const savedEnquiryId=await response.json();
+      if(!savedEnquiryId||typeof savedEnquiryId!=='string') throw new Error('Your enquiry was saved, but we could not start the email confirmation. Please contact us at sushil.mediation@gmail.com.');
       enquiryForm.reset();
       enquiryStatus.className='form-status success';
       enquiryStatus.textContent='Your enquiry has been received. Sending your confirmation email…';
@@ -528,7 +533,7 @@ body{background:var(--paper);color:var(--ink)}
             'Authorization':'Bearer sb_publishable_4PulHIrI6AUFjW7yf_6L1g_xaW-kvG8',
             'Content-Type':'application/json'
           },
-          body:JSON.stringify({id:savedEnquiry.id})
+          body:JSON.stringify({id:savedEnquiryId})
         });
         if(!emailResponse.ok){
           const emailResult=await emailResponse.json().catch(()=>({}));
